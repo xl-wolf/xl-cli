@@ -1,5 +1,4 @@
 const fs = require('fs');
-const inquirer = require("inquirer")
 
 const isExists = dir => {
     return fs.existsSync(dir)
