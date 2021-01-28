@@ -6,20 +6,20 @@ const { version } = require('../package.json')
 // 指令配置
 const mapActions = {
     'create': {
-        alias: "c",
+        alias: "init",
         description: "create a project",
-        examples: ['xl-cli create <project-name>']
+        examples: ['xl-cli create <project-name>||xl-cli init <project-name>']
     },
     // 'config': {
     //     alias: "conf",
     //     description: "config project variable",
     //     examples: ['xl-cli config set <k><v>']
     // },
-    "*": {
-        alias: "",
-        description: "command not found",
-        examples: []
-    },
+    // "*": {
+    //     alias: "",
+    //     description: "command not found",
+    //     examples: []
+    // },
 }
 // 循环配置命令
 Reflect.ownKeys(mapActions).forEach(action => {
@@ -31,7 +31,7 @@ Reflect.ownKeys(mapActions).forEach(action => {
             if (action === "*") {
                 console.log(mapActions[action].description)
             } else {
-                console.log('action:', action)
+                // console.log('action:', action)
                 require(path.resolve(__dirname, `../commands/${action}`))(...process.argv.slice(3))
             }
         })

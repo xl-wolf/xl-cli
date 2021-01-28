@@ -1,0 +1,10 @@
+[
+    {
+        "name": "vue",
+        "url": "direct:https://github.com/xl-wolf/vue-template.git" 
+    },
+    {
+        "name": "react",
+        "url": "direct:https://github.com/xl-wolf/vue-template.git"
+    }
+]

@@ -1,12 +1,8 @@
 const fs = require('fs');
 
-const isExists = dir => {
-    return fs.existsSync(dir)
-}
-
 const deleteFolder = path => {
     // 判断是否已经存在项目，如果不存在则继续，否则删除
-    if (!isExists(path)) return
+    if (!fs.existsSync(path)) return
     // 第一步读取文件内部的文件
     let arr = fs.readdirSync(path);
     // 遍历数组
