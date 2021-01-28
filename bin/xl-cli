@@ -1,0 +1,48 @@
+#!/usr/bin/env node
+//不可省略第一行注解
+const program = require('commander')
+const path = require('path')
+const { version } = require('../package.json')
+// 指令配置
+const mapActions = {
+    'create': {
+        alias: "c",
+        description: "create a project",
+        examples: ['xl-cli create <project-name>']
+    },
+    // 'config': {
+    //     alias: "conf",
+    //     description: "config project variable",
+    //     examples: ['xl-cli config set <k><v>']
+    // },
+    "*": {
+        alias: "",
+        description: "command not found",
+        examples: []
+    },
+}
+// 循环配置命令
+Reflect.ownKeys(mapActions).forEach(action => {
+    program
+        .command(action)
+        .alias(mapActions[action].alias)
+        .description(mapActions[action].description)
+        .action(() => {
+            if (action === "*") {
+                console.log(mapActions[action].description)
+            } else {
+                console.log('action:', action)
+                require(path.resolve(__dirname, `../commands/${action}`))(...process.argv.slice(3))
+            }
+        })
+})
+
+program.on("--help", () => {
+    Reflect.ownKeys(mapActions).forEach(action => {
+        mapActions[action].examples.forEach(eg => {
+            console.log(eg)
+        })
+    })
+})
+
+program.version(version).parse(process.argv)

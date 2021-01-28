@@ -1,0 +1,25 @@
+{
+  "name": "xl-cli",
+  "version": "1.0.0",
+  "bin": {
+    "xl-cli": "./bin/xl-cli"
+  },
+  "author": {
+    "name": "xl-wolf",
+    "email": "1072236984@qq.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xl-wolf/xl-cli.git"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "commander": "^7.0.0"
+  },
+  "devDependencies": {
+    "download-git-repo": "^3.0.2",
+    "inquirer": "^7.3.3",
+    "ora": "^5.3.0"
+  }
+}
