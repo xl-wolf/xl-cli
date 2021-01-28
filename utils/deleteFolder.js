@@ -10,7 +10,6 @@ const deleteFolder = path => {
     if (!isExists(path)) return
     // 第一步读取文件内部的文件
     let arr = fs.readdirSync(path);
-    console.log(arr);
     // 遍历数组
     for (let i = 0; i < arr.length; i++) {
         // 获取文件的状态
@@ -27,4 +26,5 @@ const deleteFolder = path => {
     // 遍历完成之后 删除最外层的文件
     fs.rmdirSync(path);
 }
+
 module.exports = deleteFolder;
