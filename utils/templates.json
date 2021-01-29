@@ -1,10 +1,12 @@
 [
     {
         "name": "vue",
-        "url": "direct:https://github.com/xl-wolf/vue-template.git" 
+        "url": "direct:https://github.com/xl-wolf/vue-template.git" ,
+        "description":"此处的name要与inquirer中的listFunc中的promptList[0].choice对应"
     },
     {
         "name": "react",
-        "url": "direct:https://github.com/xl-wolf/react-template.git"
+        "url": "direct:https://github.com/xl-wolf/react-template.git",
+        "description":"此处的name要与inquirer中的listFunc中的promptList[0].choice对应"
     }
 ]

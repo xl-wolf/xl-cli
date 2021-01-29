@@ -3,7 +3,7 @@ const download = require('../utils/git-template')
 const ora = require('ora');
 const deleteFolder = require('../utils/deleteFolder');
 const tpls = require('../utils/templates.json')
-const inquirer = require('../utils/inquirer')
+const inquirerFunc = require('../utils/inquirer')
 
 const downloadGit = (PName, template) => {
     console.log(chalk.greenBright('\n Start generating... \n'));
@@ -12,9 +12,10 @@ const downloadGit = (PName, template) => {
     const spinner = ora('Downloading...');
     spinner.start();
     // 从vue和react两个模板中选择一个
+    // console.log(tpls,template)
     const [repository] = tpls.filter(type => { return type.name === template });
-    const url = repository ? repository.url : tpls[0].url //如果repository没有值默认使用vue
-    download(url, PName).then((err) => {
+    const url = repository?.url
+    url&&download(url, PName).then((err) => {
         spinner.succeed();
         if (err) {
             console.log(chalk.red('\n clone project template exception'));
@@ -25,5 +26,5 @@ const downloadGit = (PName, template) => {
     });
 }
 module.exports = PName => {
-    inquirer.confirmFunc(downloadGit, PName)
+    inquirerFunc({downloadGit, PName})
 }
