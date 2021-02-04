@@ -37,7 +37,8 @@ const listFunc = (callback, PName) => {
         name: 'template',
         choices: [
             "vue",
-            "react"
+            "react",
+            "easy-react"
         ],
         // 使用filter将回答变为小写
         filter: value => { return value.toLowerCase() }
@@ -49,6 +50,9 @@ const listFunc = (callback, PName) => {
                 callback && callback(PName, template)
                 break
             case 'react':
+                callback && callback(PName, template)
+                break
+            case 'easy-react':
                 callback && callback(PName, template)
                 break
             default:

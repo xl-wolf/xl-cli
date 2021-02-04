@@ -8,5 +8,10 @@
         "name": "react",
         "url": "direct:https://github.com/xl-wolf/react-template.git",
         "description":"此处的name要与inquirer中的listFunc中的promptList[0].choice对应"
+    },
+    {
+        "name": "easy-react",
+        "url": "direct:https://github.com/xl-wolf/easy-react-template.git",
+        "description":"此处的name要与inquirer中的listFunc中的promptList[0].choice对应"
     }
 ]
