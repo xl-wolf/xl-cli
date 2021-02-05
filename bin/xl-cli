@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-//不可省略第一行注解
+//不可省略第一行注解 指明执行脚本的解释器
 const program = require('commander')
 const path = require('path')
 const { version } = require('../package.json')
