@@ -1,7 +1,6 @@
 const chalk = require('chalk');
 const download = require('../utils/git-template')
 const ora = require('ora');
-// const deleteFolder = require('../utils/deleteFolder');
 const tpls = require('../utils/templates.json')
 const inquirerFunc = require('../utils/inquirer')
 
@@ -11,7 +10,7 @@ const downloadGit = (PName, template) => {
     // deleteFolder('./' + PName);
     const spinner = ora('Downloading...');
     spinner.start();
-    // 从vue和react两个模板中选择一个
+    // 从远程git模板中选择
     // console.log(tpls,template)
     const [repository] = tpls.filter(type => { return type.name === template });
     const url = repository?.url

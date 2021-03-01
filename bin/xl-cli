@@ -32,6 +32,7 @@ Reflect.ownKeys(mapActions).forEach(action => {
                 console.log(mapActions[action].description)
             } else {
                 // console.log('action:', action)
+                // 命令行执行命令和命令行参数收集
                 require(path.resolve(__dirname, `../commands/${action}`))(...process.argv.slice(3))
             }
         })

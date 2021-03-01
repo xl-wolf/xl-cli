@@ -45,20 +45,7 @@ const listFunc = (callback, PName) => {
     }]
     inquirer.prompt(promptList).then(type => {
         const { template } = type
-        switch (template) {
-            case 'vue':
-                callback && callback(PName, template)
-                break
-            case 'react':
-                callback && callback(PName, template)
-                break
-            case 'easy-react':
-                callback && callback(PName, template)
-                break
-            default:
-                break
-        }
-
+        callback && callback(PName, template)
     })
 }
 
