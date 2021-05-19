@@ -6,6 +6,12 @@ const isExists = dir => {
   return fs.existsSync(dir)
 }
 
+const isExistsProject = PName => {
+    // 如果没有指定项目名称怎不创建项目
+    !PName && console.log(`projectName should not be empty!`)
+    return !!PName
+}
+// 命令行询问弹窗
 const confirmFunc = (callback, PName) => {
   // 判断是否已经存在项目，如果不存在则继续，否则删除
   if (isExists(PName)) {

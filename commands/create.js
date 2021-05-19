@@ -1,9 +1,8 @@
 const chalk = require('chalk');
 const download = require('../utils/git-template')
 const ora = require('ora');
-const deleteFolder = require('../utils/deleteFolder');
 const tpls = require('../utils/templates.json')
-const inquirer = require('../utils/inquirer')
+const inquirerFunc = require('../utils/inquirer')
 
 const downloadGit = (PName, template) => {
   console.log(chalk.greenBright('\n Start generating... \n'));

@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-//不可省略第一行注解
+//不可省略第一行注解 指明执行脚本的解释器
 const program = require('commander')
 const path = require('path')
 const { version } = require('../package.json')
@@ -32,6 +32,7 @@ Reflect.ownKeys(mapActions).forEach(action => {
                 console.log(mapActions[action].description)
             } else {
                 // console.log('action:', action)
+                // 命令行执行命令和命令行参数收集
                 require(path.resolve(__dirname, `../commands/${action}`))(...process.argv.slice(3))
             }
         })
