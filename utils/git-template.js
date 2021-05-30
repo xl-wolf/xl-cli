@@ -1,9 +1,7 @@
-const download = require('download-git-repo');
+const download = require('download-git-repo')
 
-module.exports = (repository, projectName) => {
-    return new Promise((resolve, reject) => {
-        download(repository, projectName, { clone: true }, function (err) {
-            resolve(err);
-        });
-    });
-};
+module.exports = (repository, projectName) => new Promise((resolve, reject) => {
+  download(repository, projectName, { clone: true }, function (err) {
+    resolve(err)
+  })
+})
