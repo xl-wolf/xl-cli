@@ -12,7 +12,7 @@ const confirmFunc = (callback, PName) => {
       message: `${PName} already exists! continue?`,
       name: "watch",
     }];
-    inquirer.prompt(promptList).then((answers) => {
+    inquirer.prompt(promptList).then(answers => {
       // console.log(answers, callback); // 返回的结果
       const { watch } = answers
       watch && callback && callback(PName)
@@ -27,9 +27,9 @@ const confirmFunc = (callback, PName) => {
         "react"
       ],
       // 使用filter将回答变为小写
-      filter: (val) => { return val.toLowerCase() }
+      filter: val => val.toLowerCase()
     }]
-    inquirer.prompt(promptList).then((type) => {
+    inquirer.prompt(promptList).then(type => {
       const { template } = type
       switch (template) {
         case 'vue':

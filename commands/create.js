@@ -10,7 +10,7 @@ const downloadGit = (PName, template) => {
   const spinner = ora('Downloading...');
   spinner.start();
   // 从vue和react两个模板中选择一个
-  const [repository] = tpls.filter(type => { return type.name === template });
+  const [repository] = tpls.filter(type => type.name === template);
   const url = repository ? repository.url : tpls[0].url //如果repository没有值默认使用vue
   download(url, PName).then((err) => {
     spinner.succeed();
